@@ -29,3 +29,6 @@ The project structure is divided into several directories:
 ### Screenshots
 - Root app view ![](https://i.imgur.com/Q4ScBFC.png)
 - Profile screen ![](https://i.imgur.com/f2rPNr9.png)
+
+### Download
+You can download the app [here](https://drive.google.com/file/d/1VDOoNjdR3NpM8kACuaXsMJwYQv9Hrvao/view?usp=share_link).
