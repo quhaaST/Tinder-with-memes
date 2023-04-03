@@ -1,40 +1,37 @@
-import 'package:first_app/network/requests.dart';
 import 'package:first_app/views/controls_widget.dart';
+import 'package:first_app/views/favorites_page.dart';
 import 'package:first_app/views/joke_widget.dart';
 import 'package:first_app/views/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../models/joke.dart';
+import '../providers/jokes_provider.dart';
 
-class RootPage extends StatefulWidget {
+class RootPage extends HookConsumerWidget {
   const RootPage({super.key});
 
   @override
-  State<RootPage> createState() => _RootPageState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final joke = ref.watch(jokesProvider);
 
-class _RootPageState extends State<RootPage> {
-  late Future<Joke> futureJoke;
-
-  @override
-  void initState() {
-    super.initState();
-    futureJoke = fetchJoke();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Tinder&Chuck',
         ),
         actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.favorite,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) {
+                  return const FavoritesPage();
+                }),
+              );
+            },
+          ),
           IconButton(
             icon: const Icon(
               Icons.person,
@@ -57,21 +54,19 @@ class _RootPageState extends State<RootPage> {
             Expanded(
               flex: 1,
               child: JokeWidget(
-                futureJoke: futureJoke,
+                futureJoke: joke,
               ),
             ),
             Expanded(
               flex: 0,
               child: ControlsWidget(
-                onDislikeButtonClick: () => {
-                  setState(() {
-                    futureJoke = fetchJoke();
-                  })
+                onDislikeButtonClick: () =>
+                {
+                  ref.refresh(jokesProvider)
                 },
-                onLikeButtonClick: () => {
-                  setState(() {
-                    futureJoke = fetchJoke();
-                  })
+                onLikeButtonClick: () =>
+                {
+                  ref.refresh(jokesProvider)
                 },
               ),
             ),
