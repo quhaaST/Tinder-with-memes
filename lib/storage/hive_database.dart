@@ -38,10 +38,15 @@ class HiveDatabase {
 
     Box<DummyJoke> box = await initBox();
 
+    var currentValues = box.values.toList();
+
     var id = box.length + 1;
     var dummyJokeBody = DummyJoke(id, joke.value);
 
-    box.add(dummyJokeBody);
+    // add only new jokes to the database
+    if (!currentValues.any((element) => element.text == joke.value)) {
+      box.add(dummyJokeBody);
+    }
   }
 
   Future<List<DummyJoke>> readAll() async {
