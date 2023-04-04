@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -7,7 +8,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: Text(AppLocalizations.of(context)!.profileTitle),
       ),
       body: SizedBox(
         height: 450.0,
@@ -18,18 +19,18 @@ class ProfilePage extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
-                    'Name',
-                    style: TextStyle(
+                    AppLocalizations.of(context)!.nameField,
+                    style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ), // give it width
-                  Text(
+                  const Text(
                     'Aleksandr',
                     style: TextStyle(
                       fontSize: 20.0,
@@ -41,18 +42,18 @@ class ProfilePage extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
-                    'Surname',
-                    style: TextStyle(
+                    AppLocalizations.of(context)!.surnameField,
+                    style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
-                  Text(
+                  const Text(
                     'Evdokimov',
                     style: TextStyle(
                       fontSize: 20.0,
@@ -64,18 +65,18 @@ class ProfilePage extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
-                    'Group',
-                    style: TextStyle(
+                    AppLocalizations.of(context)!.groupField,
+                    style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
-                  Text(
+                  const Text(
                     'SD-01',
                     style: TextStyle(
                       fontSize: 20.0,

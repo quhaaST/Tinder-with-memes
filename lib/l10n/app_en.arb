@@ -1,0 +1,26 @@
+{
+    "favoritesTitle": "Favorites",
+    "@favoritesTitle": {
+        "description": "The title for the favorites page."
+    },
+
+    "profileTitle": "Profile",
+    "@profileTitle": {
+        "description": "The title for the profile page."
+    },
+
+    "nameField": "Name",
+    "@nameField": {
+        "description": "The field name of the Name in Profile."
+    },
+
+    "surnameField": "Surname",
+    "@surnameField": {
+        "description": "The field name of the Surname in Profile."
+    },
+
+    "groupField": "Group",
+    "@groupField": {
+        "description": "The field name of the Group in Profile."
+    }
+}

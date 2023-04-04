@@ -1,6 +1,7 @@
 import 'package:first_app/models/dummy_joke.dart';
 import 'package:first_app/views/item_favorite.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../interactors/favorites_interactor.dart';
@@ -24,7 +25,7 @@ class FavoritesPage extends HookConsumerWidget {
         if (snapshot.hasData) {
           return Scaffold(
               appBar: AppBar(
-                title: const Text('Favorites'),
+                title: Text(AppLocalizations.of(context)!.favoritesTitle),
                 actions: [
                   IconButton(
                     icon: const Icon(
