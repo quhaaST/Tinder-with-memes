@@ -23,7 +23,7 @@ class MyApp extends HookConsumerWidget {
         primaryColor: Colors.white54,
       ),
       title: 'Flutter Demo',
-      home: const RootPage(),
+      home: RootPage(),
     );
   }
 }
