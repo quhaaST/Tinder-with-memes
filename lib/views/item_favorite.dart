@@ -39,7 +39,7 @@ class FavoriteItemWidget extends StatelessWidget {
               child: Text(
                 jokeText,
                 overflow: TextOverflow.ellipsis,
-                maxLines: 4,
+                maxLines: 5,
               ),
             ),
           ),

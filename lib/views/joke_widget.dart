@@ -42,18 +42,21 @@ class JokeWidget extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24.0,
-                    ),
-                    child: Text(
-                      snapshot.data!.value,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: getJokeTextSize(snapshot.data!.value),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24.0,
                       ),
-                    ),
-                  ),
+                      child: Flexible(
+                        child: Text(
+                          snapshot.data!.value,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 6,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: getJokeTextSize(snapshot.data!.value),
+                          ),
+                        ),
+                      )),
                 ],
               ),
             ),
